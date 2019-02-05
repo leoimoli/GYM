@@ -50,9 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dao\ClienteDao.cs" />
+    <Compile Include="Dao\EjerciciosDao.cs" />
+    <Compile Include="Dao\FichaMedicaDao.cs" />
     <Compile Include="Dao\PlanesDao.cs" />
     <Compile Include="Dao\UsuarioDao.cs" />
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\Ejercicios.cs" />
+    <Compile Include="Entidades\FichaMedica.cs" />
     <Compile Include="Entidades\PlanesSociales.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Form1.cs">
@@ -62,6 +66,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Negocio\ClienteNeg.cs" />
+    <Compile Include="Negocio\EjerciciosNeg.cs" />
+    <Compile Include="Negocio\FichaMedicaNeg.cs" />
     <Compile Include="Negocio\PlanesSocietariosNeg.cs" />
     <Compile Include="Negocio\UsuarioNeg.cs" />
     <Compile Include="Program.cs" />

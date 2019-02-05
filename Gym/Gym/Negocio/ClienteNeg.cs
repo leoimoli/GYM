@@ -136,5 +136,18 @@ namespace Gym.Negocio
             }
             return exito;
         }
+        public static bool ReactivarCliente(Cliente _cliente)
+        {
+            bool exito = false;
+            try
+            {
+                exito = ClienteDao.ReactivarCliente(_cliente);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return exito;
+        }
     }
 }

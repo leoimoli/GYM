@@ -261,6 +261,58 @@ namespace Gym
                                              MessageBoxIcon.Asterisk);
             }
         }
+        private void btnReactivarCliente_Click(object sender, EventArgs e)
+        {
+            Cliente _cliente = new Cliente();
+            _cliente.Dni = "33222444";
+            _cliente.Sexo = "Masculino";
+            bool Exito = ClienteNeg.ReactivarCliente(_cliente);
+            if (Exito == true)
+            {
+                const string message2 = "El cliente se Activo exitosamente.";
+                const string caption2 = "Éxito";
+                var result2 = MessageBox.Show(message2, caption2,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Asterisk);
+            }
+        }
+        private void btnGuardaFicha_Click(object sender, EventArgs e)
+        {
+            FichaMedica _ficha = new FichaMedica();
+            _ficha.idCliente = 1;
+            _ficha.Peso = "80";
+            _ficha.Altura = "1,78";
+            _ficha.Medicamentos = "Ceretide, corticoide";
+            _ficha.Afecciones = "Alergias, Asma";
+            _ficha.Cirugias = "piloro, forunculo";
+            _ficha.FechaAlta = DateTime.Now;
+            bool Exito = FichaMedicaNeg.GurdarFichaMedica(_ficha);
+            if (Exito == true)
+            {
+                const string message2 = "Se registro la ficha medica del cliente exitosamente.";
+                const string caption2 = "Éxito";
+                var result2 = MessageBox.Show(message2, caption2,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Asterisk);
+            }
+        }
+
+        #endregion
+        #region ///Ejercicios
+        private void btnGuardarTipoEjercicio_Click(object sender, EventArgs e)
+        {
+            Ejercicios _ejercicio = new Ejercicios();
+            _ejercicio.NombreTipoEjercicio = "Tren Inferior";
+            bool Exito = EjerciciosNeg.GurdarTipoEjercicio(_ejercicio);
+            if (Exito == true)
+            {
+                const string message2 = "Se registro el Tipo de Ejercicio exitosamente.";
+                const string caption2 = "Éxito";
+                var result2 = MessageBox.Show(message2, caption2,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Asterisk);
+            }
+        }
         #endregion
     }
 }

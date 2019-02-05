@@ -108,5 +108,23 @@ namespace Gym.Dao
             connection.Close();
             return exito;
         }
+        public static bool ReactivarCliente(Cliente _cliente)
+        {
+            bool exito = false;
+            connection.Close();
+            connection.Open();
+            string Actualizar = "ReactivarCliente";
+            MySqlCommand cmd = new MySqlCommand(Actualizar, connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure;
+            string Estado = "Activo";
+            cmd.Parameters.AddWithValue("Estado_in", Estado);
+            cmd.Parameters.AddWithValue("Dni_in", _cliente.Dni);
+            cmd.Parameters.AddWithValue("Sexo_in", _cliente.Sexo);
+            cmd.ExecuteNonQuery();
+            exito = true;
+            connection.Close();
+            return exito;
+        }
     }
 }
