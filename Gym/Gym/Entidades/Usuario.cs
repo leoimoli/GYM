@@ -20,5 +20,7 @@ namespace Gym.Entidades
         public string Contraseña2 { get; set; }
         public int Perfil { get; set; }
         public string Estado { get; set; }
+
+        public string NombrePerfil { get; set; }
     }
 }

@@ -71,6 +71,36 @@ namespace Gym.Dao
             connection.Close();
             return exito;
         }
+        public static List<PlanesSociales> ConsultarPlan(PlanesSociales _listaPlanes)
+        {
+            connection.Close();
+            connection.Open();
+            List<PlanesSociales> listaPlanes = new List<PlanesSociales>();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = connection;
+            DataTable Tabla = new DataTable();
+            MySqlParameter[] oParam = { new MySqlParameter("Estado_in", _listaPlanes.Estado) };
+            string proceso = "ConsultarPlanes";
+            MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
+            dt.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dt.SelectCommand.Parameters.AddRange(oParam);
+            dt.Fill(Tabla);
+            if (Tabla.Rows.Count > 0)
+            {
+
+                foreach (DataRow item in Tabla.Rows)
+                {
+                    Entidades.PlanesSociales listaPlanes2 = new Entidades.PlanesSociales();
+                    listaPlanes2.idPlan = Convert.ToInt32(item["idPlan"].ToString());
+                    listaPlanes2.Nombre = item["Nombre"].ToString();
+                    listaPlanes2.FechaDeAlta = Convert.ToDateTime(item["FechaAlta"].ToString());
+                    listaPlanes2.Valor = Convert.ToDecimal(item["Valor"].ToString());
+                    listaPlanes.Add(listaPlanes2);
+                }
+            }
+            connection.Close();
+            return listaPlanes;
+        }
         public static bool InsertNuevoValor(PlanesSociales _planes)
         {
             bool exito = false;

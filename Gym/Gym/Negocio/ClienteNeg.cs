@@ -149,5 +149,18 @@ namespace Gym.Negocio
             }
             return exito;
         }
+        public static List<Cliente> ConsultarClientes(Cliente _cliente)
+        {
+            List<Cliente> _listaClientes = new List<Cliente>();
+            try
+            {
+                _listaClientes = ClienteDao.ConsultarClientes(_cliente);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return _listaClientes;
+        }
     }
 }

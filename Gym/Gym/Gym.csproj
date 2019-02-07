@@ -53,11 +53,13 @@
     <Compile Include="Dao\EjerciciosDao.cs" />
     <Compile Include="Dao\FichaMedicaDao.cs" />
     <Compile Include="Dao\PlanesDao.cs" />
+    <Compile Include="Dao\RutinaDao.cs" />
     <Compile Include="Dao\UsuarioDao.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Ejercicios.cs" />
     <Compile Include="Entidades\FichaMedica.cs" />
     <Compile Include="Entidades\PlanesSociales.cs" />
+    <Compile Include="Entidades\Rutina.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -69,6 +71,7 @@
     <Compile Include="Negocio\EjerciciosNeg.cs" />
     <Compile Include="Negocio\FichaMedicaNeg.cs" />
     <Compile Include="Negocio\PlanesSocietariosNeg.cs" />
+    <Compile Include="Negocio\RutinaNeg.cs" />
     <Compile Include="Negocio\UsuarioNeg.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

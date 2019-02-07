@@ -205,6 +205,19 @@ namespace Gym.Negocio
                 throw new Exception();
             }
         }
+        public static List<Usuario> ConsultarUsuarios(Usuario _usuario)
+        {
+            List<Usuario> _listaUsuarios = new List<Usuario>();
+            try
+            {
+                _listaUsuarios = UsuarioDao.ConsultarUsuarios(_usuario);
+            }
+            catch (Exception ex)
+            {
+              
+            }
+            return _listaUsuarios;
+        }
         private static bool ValidarUsuarioExistente(string dni, string sexo)
         {
             bool existe = UsuarioDao.ValidarUsuarioExistente(dni, sexo);

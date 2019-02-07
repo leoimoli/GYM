@@ -25,5 +25,7 @@ namespace Gym.Entidades
         public int idUsuario { get; set; }
         public string Estado { get; set; }
         public byte[] Imagen { get; set; }
+        public string PlanNombre { get; set; }
+        public string PerfilNombre { get; set; }
     }
 }

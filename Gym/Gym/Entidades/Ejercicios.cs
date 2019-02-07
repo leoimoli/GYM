@@ -13,6 +13,6 @@ namespace Gym.Entidades
         public int idEjercicio { get; set; }
         public string Nombre { get; set; }
         public string Imagen { get; set; }
-        public string idUsuario { get; set; }
+        public int idUsuario { get; set; }
     }
 }

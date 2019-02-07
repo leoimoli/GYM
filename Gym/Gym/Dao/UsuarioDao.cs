@@ -86,7 +86,7 @@ namespace Gym.Dao
             exito = true;
             connection.Close();
             return exito;
-        }     
+        }
         public static List<Usuario> BuscarUsuarioPorDNI(string dni)
         {
             connection.Close();
@@ -156,7 +156,7 @@ namespace Gym.Dao
             exito = true;
             connection.Close();
             return exito;
-        }       
+        }
         public static bool ValidarUsuarioExistente(string dni, string sexo)
         {
             connection.Close();
@@ -182,6 +182,44 @@ namespace Gym.Dao
             }
             connection.Close();
             return Existe;
+        }
+        public static List<Usuario> ConsultarUsuarios(Usuario _usuario)
+        {
+            connection.Close();
+            connection.Open();
+            List<Usuario> _listaUsuarios = new List<Usuario>();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = connection;
+            DataTable Tabla = new DataTable();
+            MySqlParameter[] oParam = { new MySqlParameter("Estado_in", _usuario.Estado) };
+            string proceso = "ConsultarUsuarios";
+            MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
+            dt.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dt.SelectCommand.Parameters.AddRange(oParam);
+            dt.Fill(Tabla);
+            if (Tabla.Rows.Count > 0)
+            {
+
+                foreach (DataRow item in Tabla.Rows)
+                {
+                    Entidades.Usuario listaUsuario = new Entidades.Usuario();
+                    listaUsuario.IdUsuario = Convert.ToInt32(item["idUsuario"].ToString());
+                    listaUsuario.Dni = item["Dni"].ToString();
+                    listaUsuario.Dni = item["Sexo"].ToString();
+                    listaUsuario.Apellido = item["Apellido"].ToString();
+                    listaUsuario.Nombre = item["Nombre"].ToString();
+                    listaUsuario.FechaDeAlta = Convert.ToDateTime(item["FechaNacimiento"].ToString());
+                    listaUsuario.Perfil = Convert.ToInt32(item["idPerfil"].ToString());
+                    listaUsuario.Contraseña = item["Contrasenia"].ToString();
+                    listaUsuario.FechaDeAlta = Convert.ToDateTime(item["FechaAlta"].ToString());
+                    listaUsuario.FechaUltimaConexion = Convert.ToDateTime(item["FechaUltimaConexion"].ToString());
+                    listaUsuario.Estado = item["Estado"].ToString();
+                    listaUsuario.NombrePerfil = item["prueba"].ToString();
+                    _listaUsuarios.Add(listaUsuario);
+                }
+            }
+            connection.Close();
+            return _listaUsuarios;
         }
         public static List<Usuario> BuscarUsuarioPorApellido(string apellido)
         {
@@ -218,7 +256,7 @@ namespace Gym.Dao
             }
             connection.Close();
             return lista;
-        }       
+        }
         public static bool EditarUsuario(Usuario _usuario)
         {
             bool exito = false;

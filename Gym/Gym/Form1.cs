@@ -135,6 +135,28 @@ namespace Gym
                                              MessageBoxIcon.Asterisk);
             }
         }
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            Usuario _usuario = new Usuario();
+            _usuario.Estado = "Activo";
+            List<Usuario> Lista = UsuarioNeg.ConsultarUsuarios(_usuario);
+            if (Lista.Count > 0)
+            {
+                const string message2 = "Exito.";
+                const string caption2 = "Éxito";
+                var result2 = MessageBox.Show(message2, caption2,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Asterisk);
+            }
+            if (Lista.Count == 0)
+            {
+                const string message2 = "Exito sin dato.";
+                const string caption2 = "Éxito";
+                var result2 = MessageBox.Show(message2, caption2,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Asterisk);
+            }
+        }
         #endregion
         #region ///Planes
         private void btnGuardarPlan_Click(object sender, EventArgs e)
@@ -183,6 +205,28 @@ namespace Gym
             if (Exito == true)
             {
                 const string message2 = "El plan se dio de baja exitosamente.";
+                const string caption2 = "Éxito";
+                var result2 = MessageBox.Show(message2, caption2,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Asterisk);
+            }
+        }
+        private void btnConsultarPlan_Click(object sender, EventArgs e)
+        {
+            PlanesSociales _planes = new PlanesSociales();
+            _planes.Estado = "Vigente";
+            List<PlanesSociales> Lista = PlanesSocietariosNeg.ConsultarPlan(_planes);
+            if (Lista.Count > 0)
+            {
+                const string message2 = "Exito.";
+                const string caption2 = "Éxito";
+                var result2 = MessageBox.Show(message2, caption2,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Asterisk);
+            }
+            if (Lista.Count == 0)
+            {
+                const string message2 = "Exito sin dato.";
                 const string caption2 = "Éxito";
                 var result2 = MessageBox.Show(message2, caption2,
                                              MessageBoxButtons.OK,
@@ -296,7 +340,28 @@ namespace Gym
                                              MessageBoxIcon.Asterisk);
             }
         }
-
+        private void btnConsultarClientes_Click(object sender, EventArgs e)
+        {
+            Cliente _cliente = new Cliente();
+            _cliente.Estado = "Activo";
+            List<Cliente> Lista = ClienteNeg.ConsultarClientes(_cliente);
+            if (Lista.Count > 0)
+            {
+                const string message2 = "Exito.";
+                const string caption2 = "Éxito";
+                var result2 = MessageBox.Show(message2, caption2,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Asterisk);
+            }
+            if (Lista.Count == 0)
+            {
+                const string message2 = "Exito sin dato.";
+                const string caption2 = "Éxito";
+                var result2 = MessageBox.Show(message2, caption2,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Asterisk);
+            }
+        }
         #endregion
         #region ///Ejercicios
         private void btnGuardarTipoEjercicio_Click(object sender, EventArgs e)
@@ -307,6 +372,54 @@ namespace Gym
             if (Exito == true)
             {
                 const string message2 = "Se registro el Tipo de Ejercicio exitosamente.";
+                const string caption2 = "Éxito";
+                var result2 = MessageBox.Show(message2, caption2,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Asterisk);
+            }
+        }
+        private void btnGuardarEjercicio_Click(object sender, EventArgs e)
+        {
+            Ejercicios _ejercicio = new Ejercicios();
+            _ejercicio.Nombre = "Bicicleta";
+            _ejercicio.idTipoEjercicio = 3;
+            _ejercicio.idUsuario = 1;
+            bool Exito = EjerciciosNeg.GurdarEjercicio(_ejercicio);
+            if (Exito == true)
+            {
+                const string message2 = "Se registro el Ejercicio exitosamente.";
+                const string caption2 = "Éxito";
+                var result2 = MessageBox.Show(message2, caption2,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Asterisk);
+            }
+        }
+        #endregion
+        #region ///Rutinas
+        private void btnGuardarRutina_Click(object sender, EventArgs e)
+        {
+            Rutina _rutina = new Rutina();
+            int idCliente = 1;
+            List<Rutina> listaRutina = new List<Rutina>();
+
+            _rutina.idEjercicio = 4;
+            _rutina.CantidadSeries = 3;
+            _rutina.idRutina = 2;
+            _rutina.Peso = "20kg";
+            _rutina.Tiempo = "";
+            listaRutina.Add(_rutina);
+
+            _rutina.idEjercicio = 1;
+            _rutina.CantidadSeries = 0;
+            _rutina.idRutina = 2;
+            _rutina.Peso = "";
+            _rutina.Tiempo = "10 minutos";
+            listaRutina.Add(_rutina);
+
+            bool Exito = RutinaNeg.GurdarRutina(listaRutina, idCliente);
+            if (Exito == true)
+            {
+                const string message2 = "Se registro la rutina exitosamente.";
                 const string caption2 = "Éxito";
                 var result2 = MessageBox.Show(message2, caption2,
                                              MessageBoxButtons.OK,

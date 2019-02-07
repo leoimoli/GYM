@@ -81,5 +81,18 @@ namespace Gym.Negocio
             bool existe = PlanesDao.ValidarPlanExistente(_planes.Nombre);
             return existe;
         }
+        public static List<PlanesSociales> ConsultarPlan(PlanesSociales _planes)
+        {
+            List<PlanesSociales> _listaPlanes = new List<PlanesSociales>();
+            try
+            {
+                _listaPlanes = PlanesDao.ConsultarPlan(_planes);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return _listaPlanes;
+        }
     }
 }

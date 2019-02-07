@@ -33,5 +33,22 @@ namespace Gym.Dao
             connection.Close();
             return exito;
         }
+        public static bool InsertEjercicio(Ejercicios _ejercicio)
+        {
+            bool exito = false;
+            connection.Close();
+            connection.Open();
+            string proceso = "AltaEjercicio";
+            MySqlCommand cmd = new MySqlCommand(proceso, connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("Nombre_in", _ejercicio.Nombre);
+            cmd.Parameters.AddWithValue("Imagen_in", _ejercicio.Imagen);
+            cmd.Parameters.AddWithValue("idTipoEjercicio_in", _ejercicio.idTipoEjercicio);
+            cmd.Parameters.AddWithValue("idUsuario_in", _ejercicio.idUsuario);
+            cmd.ExecuteNonQuery();
+            exito = true;
+            connection.Close(); 
+            return exito;
+        }
     }
 }

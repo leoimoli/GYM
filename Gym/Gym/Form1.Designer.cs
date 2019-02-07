@@ -34,30 +34,35 @@
             this.btnReactivar = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnGuardarPlan = new System.Windows.Forms.Button();
             this.btnNuevoValor = new System.Windows.Forms.Button();
             this.btnBajarPlan = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnGuardaFicha = new System.Windows.Forms.Button();
             this.btnLoginCliente = new System.Windows.Forms.Button();
             this.btnGuardarCliente = new System.Windows.Forms.Button();
             this.btnReactivarCliente = new System.Windows.Forms.Button();
             this.btnEditarCliente = new System.Windows.Forms.Button();
             this.btnBajarCliente = new System.Windows.Forms.Button();
-            this.btnGuardaFicha = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnGuardarTipoEjercicio = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnGuardarEjercicio = new System.Windows.Forms.Button();
+            this.btnConsultarPlan = new System.Windows.Forms.Button();
+            this.btnConsultarClientes = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnGuardarRutina = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(53, 50);
+            this.button1.Location = new System.Drawing.Point(53, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 42);
             this.button1.TabIndex = 0;
@@ -67,7 +72,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(53, 116);
+            this.btnEditar.Location = new System.Drawing.Point(53, 85);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(84, 42);
             this.btnEditar.TabIndex = 1;
@@ -77,7 +82,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(53, 183);
+            this.btnEliminar.Location = new System.Drawing.Point(53, 152);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(84, 42);
             this.btnEliminar.TabIndex = 2;
@@ -87,7 +92,7 @@
             // 
             // btnReactivar
             // 
-            this.btnReactivar.Location = new System.Drawing.Point(53, 253);
+            this.btnReactivar.Location = new System.Drawing.Point(53, 222);
             this.btnReactivar.Name = "btnReactivar";
             this.btnReactivar.Size = new System.Drawing.Size(84, 42);
             this.btnReactivar.TabIndex = 3;
@@ -97,7 +102,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(53, 323);
+            this.btnLogin.Location = new System.Drawing.Point(53, 292);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(84, 42);
             this.btnLogin.TabIndex = 4;
@@ -107,6 +112,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnLogin);
             this.groupBox1.Controls.Add(this.btnEditar);
@@ -119,8 +125,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuarios";
             // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(53, 354);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(84, 42);
+            this.btnConsultar.TabIndex = 5;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnConsultarPlan);
             this.groupBox2.Controls.Add(this.btnGuardarPlan);
             this.groupBox2.Controls.Add(this.btnNuevoValor);
             this.groupBox2.Controls.Add(this.btnBajarPlan);
@@ -133,7 +150,7 @@
             // 
             // btnGuardarPlan
             // 
-            this.btnGuardarPlan.Location = new System.Drawing.Point(53, 50);
+            this.btnGuardarPlan.Location = new System.Drawing.Point(53, 17);
             this.btnGuardarPlan.Name = "btnGuardarPlan";
             this.btnGuardarPlan.Size = new System.Drawing.Size(84, 42);
             this.btnGuardarPlan.TabIndex = 0;
@@ -143,7 +160,7 @@
             // 
             // btnNuevoValor
             // 
-            this.btnNuevoValor.Location = new System.Drawing.Point(53, 116);
+            this.btnNuevoValor.Location = new System.Drawing.Point(53, 83);
             this.btnNuevoValor.Name = "btnNuevoValor";
             this.btnNuevoValor.Size = new System.Drawing.Size(84, 42);
             this.btnNuevoValor.TabIndex = 1;
@@ -153,7 +170,7 @@
             // 
             // btnBajarPlan
             // 
-            this.btnBajarPlan.Location = new System.Drawing.Point(53, 183);
+            this.btnBajarPlan.Location = new System.Drawing.Point(53, 150);
             this.btnBajarPlan.Name = "btnBajarPlan";
             this.btnBajarPlan.Size = new System.Drawing.Size(84, 42);
             this.btnBajarPlan.TabIndex = 2;
@@ -163,6 +180,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnConsultarClientes);
             this.groupBox3.Controls.Add(this.btnGuardaFicha);
             this.groupBox3.Controls.Add(this.btnLoginCliente);
             this.groupBox3.Controls.Add(this.btnGuardarCliente);
@@ -171,14 +189,24 @@
             this.groupBox3.Controls.Add(this.btnBajarCliente);
             this.groupBox3.Location = new System.Drawing.Point(460, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(261, 454);
+            this.groupBox3.Size = new System.Drawing.Size(261, 423);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Clientes";
             // 
+            // btnGuardaFicha
+            // 
+            this.btnGuardaFicha.Location = new System.Drawing.Point(142, 19);
+            this.btnGuardaFicha.Name = "btnGuardaFicha";
+            this.btnGuardaFicha.Size = new System.Drawing.Size(84, 42);
+            this.btnGuardaFicha.TabIndex = 7;
+            this.btnGuardaFicha.Text = "Guardar Ficha";
+            this.btnGuardaFicha.UseVisualStyleBackColor = true;
+            this.btnGuardaFicha.Click += new System.EventHandler(this.btnGuardaFicha_Click);
+            // 
             // btnLoginCliente
             // 
-            this.btnLoginCliente.Location = new System.Drawing.Point(23, 323);
+            this.btnLoginCliente.Location = new System.Drawing.Point(19, 292);
             this.btnLoginCliente.Name = "btnLoginCliente";
             this.btnLoginCliente.Size = new System.Drawing.Size(84, 42);
             this.btnLoginCliente.TabIndex = 6;
@@ -187,7 +215,7 @@
             // 
             // btnGuardarCliente
             // 
-            this.btnGuardarCliente.Location = new System.Drawing.Point(23, 50);
+            this.btnGuardarCliente.Location = new System.Drawing.Point(19, 19);
             this.btnGuardarCliente.Name = "btnGuardarCliente";
             this.btnGuardarCliente.Size = new System.Drawing.Size(84, 42);
             this.btnGuardarCliente.TabIndex = 0;
@@ -197,7 +225,7 @@
             // 
             // btnReactivarCliente
             // 
-            this.btnReactivarCliente.Location = new System.Drawing.Point(23, 253);
+            this.btnReactivarCliente.Location = new System.Drawing.Point(19, 220);
             this.btnReactivarCliente.Name = "btnReactivarCliente";
             this.btnReactivarCliente.Size = new System.Drawing.Size(84, 42);
             this.btnReactivarCliente.TabIndex = 5;
@@ -207,7 +235,7 @@
             // 
             // btnEditarCliente
             // 
-            this.btnEditarCliente.Location = new System.Drawing.Point(23, 116);
+            this.btnEditarCliente.Location = new System.Drawing.Point(19, 83);
             this.btnEditarCliente.Name = "btnEditarCliente";
             this.btnEditarCliente.Size = new System.Drawing.Size(84, 42);
             this.btnEditarCliente.TabIndex = 1;
@@ -217,7 +245,7 @@
             // 
             // btnBajarCliente
             // 
-            this.btnBajarCliente.Location = new System.Drawing.Point(23, 183);
+            this.btnBajarCliente.Location = new System.Drawing.Point(19, 150);
             this.btnBajarCliente.Name = "btnBajarCliente";
             this.btnBajarCliente.Size = new System.Drawing.Size(84, 42);
             this.btnBajarCliente.TabIndex = 2;
@@ -225,31 +253,20 @@
             this.btnBajarCliente.UseVisualStyleBackColor = true;
             this.btnBajarCliente.Click += new System.EventHandler(this.btnBajarCliente_Click);
             // 
-            // btnGuardaFicha
-            // 
-            this.btnGuardaFicha.Location = new System.Drawing.Point(146, 50);
-            this.btnGuardaFicha.Name = "btnGuardaFicha";
-            this.btnGuardaFicha.Size = new System.Drawing.Size(84, 42);
-            this.btnGuardaFicha.TabIndex = 7;
-            this.btnGuardaFicha.Text = "Guardar Ficha";
-            this.btnGuardaFicha.UseVisualStyleBackColor = true;
-            this.btnGuardaFicha.Click += new System.EventHandler(this.btnGuardaFicha_Click);
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnGuardarTipoEjercicio);
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.btnGuardarEjercicio);
             this.groupBox4.Location = new System.Drawing.Point(739, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 454);
+            this.groupBox4.Size = new System.Drawing.Size(200, 423);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ejercicios";
             // 
             // btnGuardarTipoEjercicio
             // 
-            this.btnGuardarTipoEjercicio.Location = new System.Drawing.Point(53, 50);
+            this.btnGuardarTipoEjercicio.Location = new System.Drawing.Point(20, 19);
             this.btnGuardarTipoEjercicio.Name = "btnGuardarTipoEjercicio";
             this.btnGuardarTipoEjercicio.Size = new System.Drawing.Size(84, 42);
             this.btnGuardarTipoEjercicio.TabIndex = 0;
@@ -257,29 +274,62 @@
             this.btnGuardarTipoEjercicio.UseVisualStyleBackColor = true;
             this.btnGuardarTipoEjercicio.Click += new System.EventHandler(this.btnGuardarTipoEjercicio_Click);
             // 
-            // button3
+            // btnGuardarEjercicio
             // 
-            this.button3.Location = new System.Drawing.Point(53, 116);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 42);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Nuevo Valor";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnGuardarEjercicio.Location = new System.Drawing.Point(20, 83);
+            this.btnGuardarEjercicio.Name = "btnGuardarEjercicio";
+            this.btnGuardarEjercicio.Size = new System.Drawing.Size(84, 42);
+            this.btnGuardarEjercicio.TabIndex = 1;
+            this.btnGuardarEjercicio.Text = "Guardar Ejercicio";
+            this.btnGuardarEjercicio.UseVisualStyleBackColor = true;
+            this.btnGuardarEjercicio.Click += new System.EventHandler(this.btnGuardarEjercicio_Click);
             // 
-            // button4
+            // btnConsultarPlan
             // 
-            this.button4.Location = new System.Drawing.Point(53, 183);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 42);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Bajar Plan";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnConsultarPlan.Location = new System.Drawing.Point(53, 220);
+            this.btnConsultarPlan.Name = "btnConsultarPlan";
+            this.btnConsultarPlan.Size = new System.Drawing.Size(84, 42);
+            this.btnConsultarPlan.TabIndex = 6;
+            this.btnConsultarPlan.Text = "Consultar";
+            this.btnConsultarPlan.UseVisualStyleBackColor = true;
+            this.btnConsultarPlan.Click += new System.EventHandler(this.btnConsultarPlan_Click);
+            // 
+            // btnConsultarClientes
+            // 
+            this.btnConsultarClientes.Location = new System.Drawing.Point(19, 354);
+            this.btnConsultarClientes.Name = "btnConsultarClientes";
+            this.btnConsultarClientes.Size = new System.Drawing.Size(84, 42);
+            this.btnConsultarClientes.TabIndex = 8;
+            this.btnConsultarClientes.Text = "Consultar";
+            this.btnConsultarClientes.UseVisualStyleBackColor = true;
+            this.btnConsultarClientes.Click += new System.EventHandler(this.btnConsultarClientes_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btnGuardarRutina);
+            this.groupBox5.Location = new System.Drawing.Point(957, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(200, 423);
+            this.groupBox5.TabIndex = 9;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Rutinas";
+            // 
+            // btnGuardarRutina
+            // 
+            this.btnGuardarRutina.Location = new System.Drawing.Point(20, 19);
+            this.btnGuardarRutina.Name = "btnGuardarRutina";
+            this.btnGuardarRutina.Size = new System.Drawing.Size(84, 42);
+            this.btnGuardarRutina.TabIndex = 0;
+            this.btnGuardarRutina.Text = "Guardar Rutina";
+            this.btnGuardarRutina.UseVisualStyleBackColor = true;
+            this.btnGuardarRutina.Click += new System.EventHandler(this.btnGuardarRutina_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1160, 511);
+            this.ClientSize = new System.Drawing.Size(1236, 552);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -290,6 +340,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -315,8 +366,12 @@
         private System.Windows.Forms.Button btnGuardaFicha;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnGuardarTipoEjercicio;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnGuardarEjercicio;
+        private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.Button btnConsultarPlan;
+        private System.Windows.Forms.Button btnConsultarClientes;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button btnGuardarRutina;
     }
 }
 
